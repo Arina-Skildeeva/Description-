@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\arina\\Documents\\GitHub\\Description-\\Description-.csproj",
-      "projectName": "Description-",
-      "projectPath": "c:\\Users\\arina\\Documents\\GitHub\\Description-\\Description-.csproj",
+      "projectUniqueName": "C:\\Users\\arina\\Documents\\GitHub\\Description\\Description.csproj",
+      "projectName": "Description",
+      "projectPath": "C:\\Users\\arina\\Documents\\GitHub\\Description\\Description.csproj",
       "packagesPath": "C:\\Users\\arina\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\arina\\Documents\\GitHub\\Description-\\obj\\",
+      "outputPath": "C:\\Users\\arina\\Documents\\GitHub\\Description\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

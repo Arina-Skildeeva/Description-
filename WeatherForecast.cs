@@ -1,6 +1,6 @@
 using System;
 
-namespace Description_
+namespace Description
 {
     public class WeatherForecast
     {
