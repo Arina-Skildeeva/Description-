@@ -23,17 +23,12 @@ namespace MusicLibrary.Controllers
             return str;
         }
 
-        [HttpPatch("Update")]
-        public string Update(string str)
+        [HttpGet("Enter")]
+        public string Enter(string str)
         {
-            return str;
+            return str; //метод входа на сайт
         }
 
-        [HttpDelete("Delete")]
-        public string Delete(string str)
-        {
-            return str;
-        }
     }
 
 }

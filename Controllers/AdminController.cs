@@ -23,17 +23,18 @@ namespace MusicLibrary.Controllers
             return str;
         }
 
-        [HttpPatch("Update")]
-        public string Update(string str)
+        [HttpGet("ApplicationAnswer")]
+        public string ApplicationAnswer(string str)
         {
-            return str;
+            return str; //метод ответа на заявки
         }
 
-        [HttpDelete("Delete")]
-        public string Delete(string str)
+        [HttpGet("CreateCharts")]
+        public string CreateCharts(string str)
         {
-            return str;
+            return str; // метод составления чартов
         }
+
     }
 
 }

@@ -23,17 +23,6 @@ namespace MusicLibrary.Controllers
             return str;
         }
 
-        [HttpPatch("Update")]
-        public string Update(string str)
-        {
-            return str;
-        }
-
-        [HttpDelete("Delete")]
-        public string Delete(string str)
-        {
-            return str;
-        }
     }
 
 }
