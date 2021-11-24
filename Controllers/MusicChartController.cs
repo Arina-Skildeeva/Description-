@@ -8,8 +8,8 @@ using Microsoft.Extensions.Logging;
 namespace MusicLibrary.Controllers
 {
     [ApiController]
-    [Route("/manager")]
-    public class ManagerController1 : ControllerBase
+    [Route("/music chart")]
+    public class MusicChartController : ControllerBase
     {
         [HttpPut("Create")]
         public string Create(string str)
@@ -23,17 +23,6 @@ namespace MusicLibrary.Controllers
             return str;
         }
 
-        [HttpPatch("Update")]
-        public string Update(string str)
-        {
-            return str;
-        }
-
-        [HttpDelete("Delete")]
-        public string Delete(string str)
-        {
-            return str;
-        }
     }
 
 }

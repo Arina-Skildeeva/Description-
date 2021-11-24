@@ -8,8 +8,8 @@ using Microsoft.Extensions.Logging;
 namespace MusicLibrary.Controllers
 {
     [ApiController]
-    [Route("/application")]
-    public class ApplicationController : ControllerBase
+    [Route("/listening")]
+    public class ListeningController : ControllerBase
     {
         [HttpPut("Create")]
         public string Create(string str)
