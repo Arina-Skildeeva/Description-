@@ -1,18 +1,17 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
-    public class AuthorStorage
+    public class AdminStorage
     {
-        private Dictionary<int, Admin> Admin { get; } = new Dictionary<int, Admin>();
+        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
         //public AuthorStorage() => Connection.Open();
 
         public void Create(Admin admin)
         {
-            Admins.Add(admin.AdminId, admin);
+            Admins.Add(admin.Id, admin);
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -27,13 +26,13 @@ namespace Description.Repository
 
         public Admin Update(int adminId, Admin newAdmin)
         {
-            Admin[adminId] = newAdmin;
+            Admins[adminId] = newAdmin;
             return Admins[adminId];
         }
 
         public bool Delete(int adminId)
         {
-            return Admins.Remove(authorId);
+            return Admins.Remove(adminId);
         }
     }
 }

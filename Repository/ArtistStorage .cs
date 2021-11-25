@@ -1,10 +1,8 @@
-﻿using Description.Domain;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 
 namespace Description.Repository
 {
-    public class AuthorStorage
+    public class ArtistStorage
     {
         private Dictionary<int, Author> Authors { get; } = new Dictionary<int, Author>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
