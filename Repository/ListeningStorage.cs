@@ -1,18 +1,18 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
     public class ListeningStorage
     {
         private Dictionary<int, Listening> Listenings { get; } = new Dictionary<int, Listening>();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Number=myUsername;Password=myPassword;");
-        //public ListeningStorage() => Connection.Open();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public AuthorStorage() => Connection.Open();
 
-        public voNumber Create(Listening Listening)
+        public Listening Create(Listening listening)
         {
-            Listenings.Add(Listening.ListeningNumber, Listening);
+            Listenings.Add(listening.Listeningnumber, listening);
+            return listening;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Listening Read(int ListeningNumber)
+        public Listening Read(int Listeningnumber)
         {
-            return Listenings[ListeningNumber];
+            return Listenings[Listeningnumber];
         }
 
-        public Listening Update(int ListeningNumber, Listening newListening)
+        public Listening Update(int Listeningnumber, Listening newListening)
         {
-            Listenings[ListeningNumber] = newListening;
-            return Listenings[ListeningNumber];
+            Listenings[Listeningnumber] = newListening;
+            return Listenings[Listeningnumber];
         }
 
-        public bool Delete(int ListeningNumber)
+        public bool Delete(int Listeningnumber)
         {
-            return Listenings.Remove(ListeningNumber);
+            return Listenings.Remove(Listeningnumber);
         }
     }
 }

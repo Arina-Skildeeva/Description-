@@ -1,6 +1,5 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
@@ -10,9 +9,10 @@ namespace Description.Repository
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
         //public AuthorStorage() => Connection.Open();
 
-        public void Create(Bill bill)
+        public Bill Create(Bill bill)
         {
-            Bills.Add(bill.AuthorId, bill);
+            Bills.Add(bill.Bankdetail, bill);
+            return bill;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Bill Read(int BillDetail)
+        public Bill Read(int billBankdetail)
         {
-            return Bills[BillDetail];
+            return Bills[billBankdetail];
         }
 
-        public Bill Update(int BillDetail, Bill newBill)
+        public Bill Update(int billBankdetail, Bill newbill)
         {
-            Bills[BillDetail] = newBill;
-            return Bills[BillDetail];
+            Bills[billBankdetail] = newbill;
+            return Bills[billBankdetail];
         }
 
-        public bool Delete(int authorId)
+        public bool Delete(int billBankdetail)
         {
-            return Bills.Remove(BillDetail);
+            return Bills.Remove(billBankdetail);
         }
     }
 }

@@ -3,26 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Description.Domain;
+using Description.Repository;
 using Microsoft.Extensions.Logging;
 
 namespace MusicLibrary.Controllers
 {
     [ApiController]
     [Route("/listening")]
-    public class ListeningController : ControllerBase
+    public class ListeningController1 : ControllerBase
     {
-        [HttpPut("Create")]
-        public string Create(string str)
+        [HttpPut]
+        public Listening Create(Listening listening)
         {
-            return str;
+            Storage.ListeningStorage.Create(listening);
+            return Storage.ListeningStorage.Read(listening.Listeningnumber);
         }
 
-        [HttpGet("Read")]
-        public string Read(string str)
+        [HttpGet]
+        public Listening Read(int Listeningnumber)
         {
-            return str;
+            return Storage.ListeningStorage.Read(Listeningnumber);
         }
 
+        [HttpPatch]
+        public Listening Update(int Listeningnumber, Listening newListening)
+        {
+            return Storage.ListeningStorage.Update(Listeningnumber, newListening);
+        }
+
+        [HttpDelete]
+        public bool Delete(int Listeningnumber)
+        {
+            return Storage.ListeningStorage.Delete(Listeningnumber);
+        }
+        
     }
 
 }

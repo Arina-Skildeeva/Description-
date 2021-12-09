@@ -1,18 +1,18 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
-    public class FavoriteStorage
+    public class FavoritesStorage
     {
-        private Dictionary<int, Favorite> Favorites { get; } = new Dictionary<int, Favorite>();
+        private Dictionary<int, Favorites> Favoritess { get; } = new Dictionary<int, Favorites>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public FavoriteStorage() => Connection.Open();
+        //public AuthorStorage() => Connection.Open();
 
-        public void Create(Favorite Favorite)
+        public Favorites Create(Favorites favorites)
         {
-            Favorites.Add(Favorite.Id, Favorite);
+            Favoritess.Add(favorites.Id, favorites);
+            return favorites;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Favorite Read(int Id)
+        public Favorites Read(int favoritesId)
         {
-            return Favorites[Id];
+            return Favoritess[favoritesId];
         }
 
-        public Favorite Update(int Id, Favorite newFavorite)
+        public Favorites Update(int favoritesId, Favorites newFavorites)
         {
-            Favorites[Id] = newFavorite;
-            return Favorites[FavoriteId];
+            Favoritess[favoritesId] = newFavorites;
+            return Favoritess[favoritesId];
         }
 
-        public bool Delete(int Id)
+        public bool Delete(int favoritesId)
         {
-            return Favorites.Remove(Id);
+            return Favoritess.Remove(favoritesId);
         }
     }
 }

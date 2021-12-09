@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Description.Domain;
+using Description.Repository;
 using Microsoft.Extensions.Logging;
 
 namespace MusicLibrary.Controllers
@@ -11,19 +13,31 @@ namespace MusicLibrary.Controllers
     [Route("/subscription")]
     public class SubscriptionController : ControllerBase
     {
-        [HttpPut("Create")]
-        public string Create(string str)
+        [HttpPut]
+        public Subscription Create(Subscription subscription)
         {
-            return str;
+            Storage.SubscriptionStorage.Create(subscription);
+            return Storage.SubscriptionStorage.Read(subscription.Id);
         }
 
-        [HttpGet("Read")]
-        public string Read(string str)
+        [HttpGet]
+        public Subscription Read(int subscriptionId)
         {
-            return str;
+            return Storage.SubscriptionStorage.Read(subscriptionId);
         }
 
-        
-    }
+        [HttpPatch]
+        public Subscription Update(int subscriptionId, Subscription newSubscription)
+        {
+            return Storage.SubscriptionStorage.Update(subscriptionId, newSubscription);
+        }
+
+        [HttpDelete]
+        public bool Delete(int subscriptionId)
+        {
+            return Storage.SubscriptionStorage.Delete(subscriptionId);
+        }
+
+    } 
 
 }

@@ -1,18 +1,18 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
     public class SubscriptionStorage
     {
         private Dictionary<int, Subscription> Subscriptions { get; } = new Dictionary<int, Subscription>();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Number=myUsername;Password=myPassword;");
-        //public SubscriptionStorage() => Connection.Open();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public AuthorStorage() => Connection.Open();
 
-        public voNumber Create(Subscription Subscription)
+        public Subscription Create(Subscription subscription)
         {
-            Subscriptions.Add(Subscription.SubscriptionNumber, Subscription);
+            Subscriptions.Add(subscription.Id, subscription);
+            return subscription;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Subscription Read(int SubscriptionNumber)
+        public Subscription Read(int subscriptionId)
         {
-            return Subscriptions[SubscriptionNumber];
+            return Subscriptions[subscriptionId];
         }
 
-        public Subscription Update(int SubscriptionNumber, Subscription newSubscription)
+        public Subscription Update(int subscriptionId, Subscription newSubscription)
         {
-            Subscriptions[SubscriptionNumber] = newSubscription;
-            return Subscriptions[SubscriptionNumber];
+            Subscriptions[subscriptionId] = newSubscription;
+            return Subscriptions[subscriptionId];
         }
 
-        public bool Delete(int SubscriptionNumber)
+        public bool Delete(int subscriptionId)
         {
-            return Subscriptions.Remove(SubscriptionNumber);
+            return Subscriptions.Remove(subscriptionId);
         }
     }
 }

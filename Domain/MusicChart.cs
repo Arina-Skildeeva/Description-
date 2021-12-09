@@ -1,7 +1,8 @@
-﻿namespace description.Domain
-
-class MusicChart
+﻿namespace Description.Domain
 {
-    public int Id { get; set; }
-    public int Rating { get; set; }
+   public class MusicChart
+    {
+        public int Id { get; set; }
+        public int Rating { get; set; }
+    }
 }

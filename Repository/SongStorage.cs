@@ -1,6 +1,5 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
@@ -8,11 +7,12 @@ namespace Description.Repository
     {
         private Dictionary<int, Song> Songs { get; } = new Dictionary<int, Song>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public SongStorage() => Connection.Open();
+        //public AuthorStorage() => Connection.Open();
 
-        public void Create(Song Song)
+        public Song Create(Song song)
         {
-            Songs.Add(Song.SongId, Song);
+            Songs.Add(song.Id, song);
+            return song;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Song Read(int SongId)
+        public Song Read(int songId)
         {
-            return Songs[SongId];
+            return Songs[songId];
         }
 
-        public Song Update(int SongId, Song newSong)
+        public Song Update(int songId, Song newSong)
         {
-            Songs[SongId] = newSong;
-            return Songs[SongId];
+            Songs[songId] = newSong;
+            return Songs[songId];
         }
 
-        public bool Delete(int SongId)
+        public bool Delete(int songId)
         {
-            return Songs.Remove(SongId);
+            return Songs.Remove(songId);
         }
     }
 }

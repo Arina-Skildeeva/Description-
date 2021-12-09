@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Description.Domain;
+using Description.Repository;
 using Microsoft.Extensions.Logging;
 
 namespace MusicLibrary.Controllers
@@ -11,19 +13,33 @@ namespace MusicLibrary.Controllers
     [Route("/favorites")]
     public class FavoritesController : ControllerBase
     {
-        [HttpPut("Create")]
-        public string Create(string str)
+        [HttpPut]
+        public Favorites Create(Favorites favorites)
         {
-            return str;
+            Storage.FavoritesStorage.Create(favorites);
+            return Storage.FavoritesStorage.Read(favorites.Id);
         }
 
-        [HttpGet("Read")]
-        public string Read(string str)
+        [HttpGet]
+        public Favorites Read(int favoritesId)
         {
-            return str;
+            return Storage.FavoritesStorage.Read(favoritesId);
         }
 
-       
+        [HttpPatch]
+        public Favorites Update(int FavoritesId, Favorites newFavorites)
+        {
+            return Storage.FavoritesStorage.Update(FavoritesId, newFavorites);
+        }
+
+        [HttpDelete]
+        public bool Delete(int favoritesId)
+        {
+            return Storage.FavoritesStorage.Delete(favoritesId);
+        }
+
+
+
     }
 
 }

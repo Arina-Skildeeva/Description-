@@ -10,9 +10,10 @@ namespace Description.Repository
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
         //public AuthorStorage() => Connection.Open();
 
-        public void Create(Application application)
+        public  Application Create(Application application)
         {
-            Applications.Add(application.ApplicationId, application);
+            Applications.Add(application.Id, application); ;
+            return application;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery

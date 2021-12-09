@@ -1,16 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using Description.Domain;
+using System.Collections.Generic;
 
 namespace Description.Repository
 {
     public class ArtistStorage
     {
-        private Dictionary<int, Author> Authors { get; } = new Dictionary<int, Author>();
+        private Dictionary<int, Artist> Artists { get; } = new Dictionary<int, Artist>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
         //public AuthorStorage() => Connection.Open();
 
-        public void Create(Author author)
+        public Artist Create(Artist artist)
         {
-            Authors.Add(author.AuthorId, author);
+            Artists.Add(artist.Id, artist);
+            return artist;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -18,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Author Read(int authorId)
+        public Artist Read(int artistId)
         {
-            return Authors[authorId];
+            return Artists[artistId];
         }
 
-        public Author Update(int authorId, Author newAuthor)
+        public Artist Update(int artistId, Artist newArtist)
         {
-            Authors[authorId] = newAuthor;
-            return Authors[authorId];
+            Artists[artistId] = newArtist;
+            return Artists[artistId];
         }
 
-        public bool Delete(int authorId)
+        public bool Delete(int artistId)
         {
-            return Authors.Remove(authorId);
+            return Artists.Remove(artistId);
         }
     }
 }

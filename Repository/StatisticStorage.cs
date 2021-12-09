@@ -1,6 +1,5 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
@@ -8,11 +7,12 @@ namespace Description.Repository
     {
         private Dictionary<int, Statistic> Statistics { get; } = new Dictionary<int, Statistic>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public StatisticStorage() => Connection.Open();
+        //public AuthorStorage() => Connection.Open();
 
-        public void Create(Statistic Statistic)
+        public Statistic Create(Statistic statistic)
         {
-            Statistics.Add(Statistic.StatisticId, Statistic);
+            Statistics.Add(statistic.Id, statistic);
+            return statistic;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public Statistic Read(int StatisticId)
+        public Statistic Read(int statisticId)
         {
-            return Statistics[StatisticId];
+            return Statistics[statisticId];
         }
 
-        public Statistic Update(int StatisticId, Statistic newStatistic)
+        public Statistic Update(int statisticId, Statistic newStatistic)
         {
-            Statistics[StatisticId] = newStatistic;
-            return Statistics[StatisticId];
+            Statistics[statisticId] = newStatistic;
+            return Statistics[statisticId];
         }
 
-        public bool Delete(int StatisticId)
+        public bool Delete(int statisticId)
         {
-            return Statistics.Remove(StatisticId);
+            return Statistics.Remove(statisticId);
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Description.Domain;
+using Description.Repository;
 using Microsoft.Extensions.Logging;
 
 namespace MusicLibrary.Controllers
@@ -11,19 +13,31 @@ namespace MusicLibrary.Controllers
     [Route("/statistic")]
     public class StatisticController : ControllerBase
     {
-        [HttpPut("Create")]
-        public string Create(string str)
+        [HttpPut]
+        public Statistic Create(Statistic statistic)
         {
-            return str;
+            Storage.StatisticStorage.Create(statistic);
+            return Storage.StatisticStorage.Read(statistic.Id);
         }
 
-        [HttpGet("Read")]
-        public string Read(string str)
+        [HttpGet]
+        public Statistic Read(int statisticId)
         {
-            return str;
+            return Storage.StatisticStorage.Read(statisticId);
         }
 
-        
+        [HttpPatch]
+        public Statistic Update(int statisticId, Statistic newStatistic)
+        {
+            return Storage.StatisticStorage.Update(statisticId, newStatistic);
+        }
+
+        [HttpDelete]
+        public bool Delete(int statisticId)
+        {
+            return Storage.StatisticStorage.Delete(statisticId);
+
+        }
+
     }
-
 }

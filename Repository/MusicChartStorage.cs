@@ -1,6 +1,5 @@
 ﻿using Description.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Description.Repository
 {
@@ -8,11 +7,12 @@ namespace Description.Repository
     {
         private Dictionary<int, MusicChart> MusicCharts { get; } = new Dictionary<int, MusicChart>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public MusicChartStorage() => Connection.Open();
+        //public AuthorStorage() => Connection.Open();
 
-        public void Create(MusicChart MusicChart)
+        public MusicChart Create(MusicChart musicchart)
         {
-            MusicCharts.Add(MusicChart.MusicChartId, MusicChart);
+            MusicCharts.Add(musicchart.Id, musicchart);
+            return musicchart;
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace Description.Repository
             //command.ExecuteScalar
         }
 
-        public MusicChart Read(int MusicChartId)
+        public MusicChart Read(int musicchartId)
         {
-            return MusicCharts[MusicChartId];
+            return MusicCharts[musicchartId];
         }
 
-        public MusicChart Update(int MusicChartId, MusicChart newMusicChart)
+        public MusicChart Update(int musicchartId, MusicChart newMusicChart)
         {
-            MusicCharts[MusicChartId] = newMusicChart;
-            return MusicCharts[MusicChartId];
+            MusicCharts[musicchartId] = newMusicChart;
+            return MusicCharts[musicchartId];
         }
 
-        public bool Delete(int MusicChartId)
+        public bool Delete(int musicchartId)
         {
-            return MusicCharts.Remove(MusicChartId);
+            return MusicCharts.Remove(musicchartId);
         }
     }
 }
