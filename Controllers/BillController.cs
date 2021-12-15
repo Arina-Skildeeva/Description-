@@ -11,7 +11,7 @@ namespace MusicLibrary.Controllers
 {
     [ApiController]
     [Route("/bill")]
-    public class BillController1 : ControllerBase
+    public class BillController : ControllerBase
     {
         [HttpPut]
         public Bill Create(Bill bill)

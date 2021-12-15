@@ -11,7 +11,7 @@ namespace MusicLibrary.Controllers
 {
     [ApiController]
     [Route("/listening")]
-    public class ListeningController1 : ControllerBase
+    public class ListeningController : ControllerBase
     {
         [HttpPut]
         public Listening Create(Listening listening)

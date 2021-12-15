@@ -11,7 +11,7 @@ namespace MusicLibrary.Controllers
 {
     [ApiController]
     [Route("/admin")]
-    public class AdminController1 : ControllerBase
+    public class AdminController : ControllerBase
     {
         [HttpPut]
         public Admin Create(Admin admin)

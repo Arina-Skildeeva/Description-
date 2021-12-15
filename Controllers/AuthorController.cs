@@ -11,7 +11,7 @@ namespace MusicLibrary.Controllers
 {
     [ApiController]
     [Route("/author")]
-    public class AuthorController1 : ControllerBase
+    public class AuthorController : ControllerBase
     {
         [HttpPut]
         public Author Create(Author author)
