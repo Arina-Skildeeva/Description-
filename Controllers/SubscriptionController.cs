@@ -23,7 +23,7 @@ namespace MusicLibrary.Controllers
         [HttpGet]
         public Subscription Read(int subscriptionId)
         {
-            return Storage.SubscriptionStorage.Read(subscriptionId);
+            return Storage.SubscriptionStorage.Read(subscriptionId);о
         }
 
         [HttpPatch]
