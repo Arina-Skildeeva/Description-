@@ -193,25 +193,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arina\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arina\\Documents\\GitHub\\Description\\Description.csproj",
+      "projectUniqueName": "D:\\rsreu\\03_practice\\0315\\Skildeeva\\Description.csproj",
       "projectName": "Description",
-      "projectPath": "C:\\Users\\arina\\Documents\\GitHub\\Description\\Description.csproj",
-      "packagesPath": "C:\\Users\\arina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arina\\Documents\\GitHub\\Description\\obj\\",
+      "projectPath": "D:\\rsreu\\03_practice\\0315\\Skildeeva\\Description.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\rsreu\\03_practice\\0315\\Skildeeva\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -259,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
