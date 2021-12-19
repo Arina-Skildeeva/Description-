@@ -276,59 +276,60 @@
 <img src="https://user-images.githubusercontent.com/90765671/146679416-afe6cc43-4c1d-4ec7-a5e5-e36053effb7a.png"></p>
 <p align="center">Рисунок 10 - Работа с методом Read</p> 
 
-После выполнения операции сервер выдаёт об админе информацию, которая была создана в Create (рисунок 11).
+После выполнения операции сервер выдаёт об Администраторе информацию, которая была занесена в методе Create (Рисунок 11).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/11.png?raw=true"></p>
+<img src="https://user-images.githubusercontent.com/90765671/146679491-c4a73fc9-d534-4d38-82bc-52fb692c6355.png"></p>
 <p align="center">Рисунок 11 - Результат выполнения операции Read</p> 
 
-3. Функция редактирования записи Update используется для изменения существующих записей в базе данных (рисунок 12).
+3. Функция редактирования записей Update предназначается для изменения существующих записей в базе данных (Рисунок 12).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/12.png?raw=true"></p>
-<p align="center">Рисунок 12 - Окно метода обновления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679563-bd170bf5-1c9c-455b-9d3a-e38c2826d6c2.png"></p>
+<p align="center">Рисунок 12 - Окно метода Update</p> 
 
-Измениение информации об админе, для этого сначала нужно ввести его номер и затем новые данные (рисунок 13).
+Измениение информации об Администраторе. Для осуществления этого изменения сначала нужно ввести его Id и затем новые данные (рисунок 13).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/13.png?raw=true"></p>
-<p align="center">Рисунок 13 - Работа с методом обновления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679643-75f1f25b-cd59-4461-a7c4-86cf1bd649f6.png"></p>
+<p align="center">Рисунок 13 - Работа с методом Update</p> 
 
-После выполнения операции сервер выдаёт новую информацию о том же админе (рисунок 14).
+После выполнения операции сервер выдаёт новую информацию об Администраторе (Рисунок 14).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/14.png?raw=true"></p>
-<p align="center">Рисунок 14 - Результат выполнения операции обновления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679677-71439ab8-a73b-40f3-a925-1fd6a496508c.png"></p>
+<p align="center">Рисунок 14 - Результат выполнения операции Update</p> 
 
-Функцией Read проверяется вышеуказанная операция. После срабатывания сервер выдает новую информацию об админе (рисунок 15).
+Функция Read проверяет вышеуказанную операцию. После чего сервер выдает новую информацию об Администраторе (рисунок 15).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/15.png?raw=true"></p>
-<p align="center">Рисунок 15 - Результат выполнения операции чтения после обновления данных</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679770-5bc5a4bf-d27b-405f-9441-3081d4b09aba.png"></p>
+<p align="center">Рисунок 15 - Результат выполнения операции Read после обновления данных</p> 
 
-4. Функция Delete используется для удаления записи по Id. Если операция удаления сработает успешно, то ответ сервера будет "true", в противном случае "false" (рисунок 16).
+4. Функция Delete используется для удаления записи по Id. Если операция Delete срабатывает успешно, то ответ сервера будет "true", в противном случае - "false" (Рисунок 16).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/16.png?raw=true"></p>
-<p align="center">Рисунок 16 - Окно метода удаления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679869-f4efa2b3-9145-448f-8073-45d869a63648.png"></p>
+<p align="center">Рисунок 16 - Окно метода Delete</p> 
 
-Удаление админа по его Id (рисунок 17).
+Удаление Администратора по его Id (Рисунок 17).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/17.png?raw=true"></p>
-<p align="center">Рисунок 17 - Работа с методом удаления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679911-93292a9d-75b1-48ad-8889-26377e2aa44d.png"></p>
+<p align="center">Рисунок 17 - Работа с методом Delete</p> 
 
-После выполнения операции ответ сервера (рисунок 18).
+После выполнения операции удаления - ответ сервера (Рисунок 18).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/18.png?raw=true"></p>
-<p align="center">Рисунок 18 - Результат выполнения метода удаления</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146679940-c85a3f7d-9f2e-4033-98f2-4b4eab2ac44a.png"></p>
+<p align="center">Рисунок 18 - Результат выполнения метода Delete</p> 
 
-Проверка вышеописанного действия с помощью Read, считывание информацию об удалённом админе (рисунок 19).
+Проверка вышеописанного действия с помощью операции чтения Read. Считывается информацию об удалённом Администраторе (Рисунок 19).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/19.png?raw=true"></p>
-<p align="center">Рисунок 19 - Работа с операцией чтения</p> 
+<img src="https://user-images.githubusercontent.com/90765671/146680000-e703dc56-a8bb-42e2-8eda-f25117232cdf.png"></p>
+<p align="center">Рисунок 19 - Работа с операцией Read после операции удаления</p> 
 
-После срабатывания программа не выдаёт информации об этом админе (рисунок 20).
+После срабатывания операции Read программа не выдаёт информации об этом Администраторе (Рисунок 20).
 <p align="center">
-<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/20.png?raw=true"></p>
-<p align="center">Рисунок 20 - Результат выполнения операции чтения после удаления данных</p>                
+<img src="https://user-images.githubusercontent.com/90765671/146680091-2b8c57d5-9883-4648-8ec9-1dcd971dd664.png></p>
+<p align="center">Рисунок 20 - Результат выполнения операции Read после удаления данных</p>                
                  
 ***
 ## Заключение <a name="заключение"></a>
-итог один исхода нет
+По окончании работы была создана информационная система "Музыкальная библиотека", которая осуществляет возможность прослушивания музыкальных композиций в онлайн режиме, ведения учёта пользователей по оформлению подписки, предоставления информации об авторах, размещения авторами своих композиций, ведение администратором чартов и их просмотра клиентами.
+
 ***
 ## Список источников и использованной литературы <a name="список_источников"></a>
 [1] Аудиостриминг как новый вид музыкального интернет-вещания [Электронный ресурс] - Режим доступа: https://cyberleninka.ru/article/n/audiostriming-kak-novyy-vid-muzykalnogo-internet-veschaniya-na-primere-striming-servisa-soundcloud/viewer. - Дата доступа: 07.10.2021 
@@ -337,3 +338,10 @@
 [4] How To Create A Music Website [Электронный ресурс] - Режим доступа: https://createamusicwebsite.com/. - Дата доступа: 15.10.2021
 [5] Deezer [Электронный ресурс] - Режим доступа: https://www.deezer.com/ru/. - Дата доступа: 17.10.2021 
 [6] Musicram [Электронный ресурс] - Режим доступа: https://apps.apple.com/us/app/musicram-listen-music-player/id1444370634. - Дата доступа: 17.10.2021 
+[7] Draw.io [Электронный ресурс]. – Режим доступа: https://app.diagrams.net/. – Дата доступа: 22.11.2021.
+[8] PlantUML [Электронный ресурс]. – Режим доступа: https://plantuml.com/ru/. – Дата доступа: 26.11.2021.
+[9] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.1.php. – Дата доступа: 29.11.2021.
+[10] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.4.php. – Дата доступа: 30.11.2021.
+[11] JournalDev [Электронный ресурс]. – Режим доступа: https://www.journaldev.com/16774/sql-data-types. – Дата доступа: 30.11.2021.
+
+***
