@@ -109,7 +109,8 @@
 
 ***
 ## 3.2 Этап реализации <a name="реализация"></a>
-На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin (листинг 1):
+На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin (Листинг 1):
+
 Листинг 1 - Класс "Администатор"
 ```C# 
 {
@@ -120,6 +121,123 @@
     }
 }
 ```
+Так же создаём классы для таких сущностей ER-диаграммы как Заявка, Исполнитель, Автор, Счёт, Клиент, Избранное, Прослушивания, Музыкальные чарты, Композиция, Статистика, Подписка.
+
+Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin (листинг 2):
+
+Листинг 2 - Контроллер класса "Администатор"
+```csharp 
+{
+    [ApiController]
+    [Route("/admin")]
+    public class AdminController : ControllerBase
+    {
+        [HttpPut]
+        public Admin Create(Admin admin)
+        {
+            Storage.AdminStorage.Create(admin);
+            return Storage.AdminStorage.Read(admin.Id);
+        }
+
+        [HttpGet]
+        public Admin Read(int adminId)
+        {
+            return Storage.AdminStorage.Read(adminId);
+        }
+
+        [HttpPatch]
+        public Admin Update(int adminId, Admin newAdmin)
+        {
+            return Storage.AdminStorage.Update(adminId, newAdmin);
+        }
+
+        [HttpDelete]
+        public bool Delete(int adminId)
+        {
+            return Storage.AdminStorage.Delete(adminId);
+        }
+        [HttpGet("ApplicationAnswer")]
+        public string ApplicationAnswer(string str)
+        {
+            return str; //метод ответа на заявки
+        }
+
+        [HttpGet("CreateCharts")]
+        public string CreateCharts(string str)
+        {
+            return str; // метод составления чартов
+        }
+
+    }
+
+}
+```
+Далее создаём контроллеры для отсавшихся классов: Заявка, Исполнитель, Автор, Счёт, Клиент, Избранное, Прослушивания, Музыкальные чарты, Композиция, Статистика, Подписка.
+
+Затем создаём хранилище для каждого класса. Пример создания хранилища для класса Admin (Листинг 3):
+
+Листинг 3 - Хранилище класса "Администратор"
+```csharp
+{
+    public class AdminStorage
+    {
+        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public AuthorStorage() => Connection.Open();
+
+        public Admin Create(Admin admin)
+        {
+            Admins.Add(admin.Id, admin);
+            return admin;
+            //var command = Connection.CreateCommand();
+            //command.CommandText = "SELECT * FROM .....";
+            //command.ExecuteNonQuery
+            //command.ExecuteReader
+            //command.ExecuteScalar
+        }
+
+        public Admin Read(int adminId)
+        {
+            return Admins[adminId];
+        }
+
+        public Admin Update(int adminId, Admin newAdmin)
+        {
+            Admins[adminId] = newAdmin;
+            return Admins[adminId];
+        }
+
+        public bool Delete(int adminId)
+        {
+            return Admins.Remove(adminId);
+        }
+    }
+}
+```
+
+Таким же образом создаём хранилища для всех оставшися классов. После этого создаём общее хранилище (Листинг 4):
+Листинг 4 - Общее хранилище
+```csharp
+{
+    public static class Storage
+    {
+        public static AdminStorage AdminStorage { get; } = new AdminStorage();
+        public static ApplicationStorage ApplicationStorage { get; } = new ApplicationStorage();
+        public static ArtistStorage ArtistStorage { get; } = new ArtistStorage();
+        public static AuthorStorage AuthorStorage { get; } = new AuthorStorage();
+        public static BillStorage BillStorage { get; } = new BillStorage();
+        public static ClientStorage ClientStorage { get; } = new ClientStorage();
+        public static FavoritesStorage FavoritesStorage { get; } = new FavoritesStorage();
+        public static ListeningStorage ListeningStorage { get; } = new ListeningStorage();
+        public static MusicChartStorage MusicChartStorage { get; } = new MusicChartStorage();
+        public static SongStorage SongStorage { get; } = new SongStorage();
+        public static StatisticStorage StatisticStorage { get; } = new StatisticStorage();
+        public static SubscriptionStorage SubscriptionStorage { get; } = new SubscriptionStorage();
+
+    }
+}
+```
+
 ***
 # 4 Тестирование <a name="тестирование"></a>
 тест
